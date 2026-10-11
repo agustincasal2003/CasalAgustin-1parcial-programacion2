@@ -2,7 +2,7 @@ package transporteturistico;
 
 public class LanchaTuristica extends Vehiculo {
 
-    // Solo puede valer "NAFTA", "DIESEL" o "ELECTRICO" (se controla en Main)
+    // Solo puede valer "NAFTA", "DIESEL" o "ELECTRICO" (todo se concentra en el MAIN
     private String tipoMotor;
 
     public LanchaTuristica(String patente, String marca, int capacidadPasajeros,

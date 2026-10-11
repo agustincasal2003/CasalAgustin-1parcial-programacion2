@@ -67,7 +67,7 @@ public class GestorVehiculos {
     }
 
     // ------------------------------------------------------------
-    // ORDENAMIENTO BURBUJA (manual)
+    // ORDENAMIENTO BURBUJA 
     // Se compara cada vehículo con el siguiente. Si están en el
     // orden equivocado, se intercambian.
     // ------------------------------------------------------------

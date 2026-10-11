@@ -1,7 +1,7 @@
 package transporteturistico;
 
-// CLASE ABSTRACTA: es el molde común de todos los vehículos.
-// No se puede hacer "new Vehiculo(...)". Solo se crean sus hijos.
+// CLASE ABSTRACTA: es lo que tienen en comun de todos los vehículos.
+
 public abstract class Vehiculo {
 
     // private = solo se pueden usar dentro de esta clase (encapsulamiento)
@@ -10,7 +10,7 @@ public abstract class Vehiculo {
     private int capacidadPasajeros;
     private int anioFabricacion;
 
-    // Constructor: se ejecuta al crear un objeto y guarda los datos
+    // setters
     public Vehiculo(String patente, String marca, int capacidadPasajeros, int anioFabricacion) {
         this.patente = patente;
         this.marca = marca;
@@ -18,7 +18,7 @@ public abstract class Vehiculo {
         this.anioFabricacion = anioFabricacion;
     }
 
-    // Getters: como los atributos son private, así los leemos desde afuera
+    // Getters
     public String getPatente() {
         return patente;
     }
@@ -35,13 +35,12 @@ public abstract class Vehiculo {
         return anioFabricacion;
     }
 
-    // MÉTODOS ABSTRACTOS: no tienen código acá.
-    // Cada hijo está obligado a escribir su propia versión.
+    
     public abstract String realizarServicio();
 
     public abstract String getTipo();
 
-    // Texto que se muestra al imprimir el vehículo
+    //se muestra al imprimir el vehículo
     @Override
     public String toString() {
         return getTipo() + " | Patente: " + patente

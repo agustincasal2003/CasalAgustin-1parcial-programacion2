@@ -66,14 +66,14 @@ public class main {
         System.out.println();
         System.out.println("--- Agregar vehículo ---");
 
-        // Primero los datos comunes a todos
+       
         int tipo = pedirTipo();
         String patente = pedirPatente();
         String marca = pedirMarca();
         int capacidad = pedirCapacidad();
         int anio = pedirAnio();
 
-        // Después el dato propio de cada tipo.
+        // 
         // "nuevo" es de tipo Vehiculo (el padre), pero guarda un hijo.
         Vehiculo nuevo;
 
@@ -97,8 +97,8 @@ public class main {
         }
     }
 
-    // ============================================================
-    // OPCIÓN 3: REALIZAR SERVICIOS  (acá se ve el POLIMORFISMO)
+    // ##################################################################
+    // OPCIÓN 3: REALIZAR SERVICIOS  (POLIMORFISMO)
     // ============================================================
     private static void realizarServicios() {
         ArrayList<Vehiculo> lista = gestor.getVehiculos();
@@ -114,7 +114,7 @@ public class main {
         for (int i = 0; i < lista.size(); i++) {
             Vehiculo v = lista.get(i);
             // v es un Vehiculo, pero según sea colectivo, van o lancha,
-            // Java ejecuta la versión de realizarServicio() que corresponde.
+            
             System.out.println(v.realizarServicio());
         }
     }
@@ -126,7 +126,7 @@ public class main {
         String patente = "";
         boolean ok = false;
 
-        // Pedimos hasta que escriba algo
+        // Pido hasta que escriba algo
         while (ok == false) {
             System.out.print("Ingrese la patente a buscar: ");
             patente = sc.nextLine();
@@ -174,11 +174,14 @@ public class main {
     }
 
     // ============================================================
-    // LEER UN NÚMERO  (acá está el TRY-CATCH obligatorio)
-    //
+    // LEER UN NÚMERO
+    // el TRY-CATCH obligatorio
+    
     // Si el usuario escribe letras, Integer.parseInt falla y lanza
     // NumberFormatException. El catch la atrapa, avisa, y el while
     // vuelve a pedir el número. El programa NO se cierra.
+    
+    // ESTO FUE CON LA IA
     // ============================================================
     private static int leerNumero(String mensaje) {
         int numero = 0;
@@ -198,10 +201,9 @@ public class main {
         return numero;
     }
 
-    // ============================================================
-    // PEDIR DATOS CON VALIDACIÓN
-    // 
-    // ============================================================
+    // ---------------------------------------------------------------
+    // validaciones
+    // --------------------------------------------------------------
     private static int pedirTipo() {
         int tipo = 0;
         boolean ok = false;
@@ -332,7 +334,7 @@ public class main {
 
         while (ok == false) {
             System.out.print("Tipo de motor (NAFTA, DIESEL, ELECTRICO): ");
-            motor = sc.nextLine().trim(); // EL .TRIM  
+            motor = sc.nextLine().trim(); // EL .TRIM  Elimina los espacios en blanco
 
             if (motor.equalsIgnoreCase("NAFTA")
                     || motor.equalsIgnoreCase("DIESEL")
